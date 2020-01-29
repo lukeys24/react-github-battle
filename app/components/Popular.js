@@ -69,7 +69,7 @@ function ReposGrid({ repos }) {
 
                             <li>
                                 <FaExclamationTriangle color='rgb(241, 138, 147)' size={22}/>
-                                {open_issues.toLocaleString()} open issues
+                                {open_issues.toLocaleString()} open
                             </li>
                         </ul>
                     </li>
