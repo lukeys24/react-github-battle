@@ -202,7 +202,11 @@ li {
     background: #141414;
 }
 
-.dark-btn :disabled {
-    background: #f2f2f2;
+.dark-btn:disabled {
     color: #C7C7C7;
+    background: #f2f2f2;
+}
+
+.players-container {
+    margin: 100px 0;
 }
