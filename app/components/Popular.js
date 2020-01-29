@@ -27,6 +27,37 @@ LanguagesNav.propTypes = {
     onUpdateLanguage : PropTypes.func.isRequired
 }
 
+function ReposGrid({ repos }) {
+    return (
+        <ul className='grid space-around'>
+            {repos.map((repo, index) => {
+                const { name, owner, html_url, stargazers_count, fork, open_issues } = repo;
+                const { login, avatar_url } = owner;
+
+                return (
+                    <li key={html_url} className='repo bg-light'>
+                        <h4 className='header-lg center-text'>
+                            #{index + 1}
+                        </h4>
+                        <img 
+                            className='avatar'
+                            src={avatar_url}
+                            alt={`Avatar for ${ login }`}
+                        />
+                        <h2 className='centerText'>
+                            <a className='link' href={ html_url }>{ login }</a>
+                        </h2>
+                    </li>
+                )
+            })}
+        </ul>
+    );
+}
+
+ReposGrid.propTypes = {
+    repos : PropTypes.array.isRequired
+}
+
 export default class Popular extends React.Component {
     constructor (props) {
         super(props);
@@ -92,7 +123,7 @@ export default class Popular extends React.Component {
 
                 {error && <p>{error}</p>}
 
-                {repos[selectedLanguage] && <pre>{JSON.stringify(repos[selectedLanguage], null, 2)}</pre>}
+                {repos[selectedLanguage] && <ReposGrid repos={repos[selectedLanguage]}/>}
             </React.Fragment>
         );
      }
