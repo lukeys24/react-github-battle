@@ -11,7 +11,7 @@ function Instructions() {
             {({ theme }) => (
                 <div className='instructions-container'>
                     <h1 className='center-text header-lg'>
-                        Intsructions
+                        Instructions
                     </h1>
 
                     <ol className='container-sm grid center-text battle-instructions'>
